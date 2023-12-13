@@ -38,6 +38,13 @@ export class App extends Component {
   }
 
   onSubmit = (q) => {
+    if (q === '') {
+      alert('Please, input word!');
+      return
+    } else if (q === this.state.query) {
+      alert('Please, input a new word!');
+      return
+    }
     this.setState({ query: q, page: 1, gallery: [] });
   }
 
